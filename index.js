@@ -19,10 +19,21 @@ function handleprofile(req, res){
 }
 */
 
-const handlelistening = () => console.log(`Listening on: http://localhost:${PORT}`);
-const handlehome = (req, res) => res.send("Welcome WeTube Home!");
-const handleprofile = (req, res) => res.send("You're on my profile now.");
+const handleListening = () => console.log(`Listening on: http://localhost:${PORT}`);
 
-app.listen(PORT, handlelistening);
-app.get("/", handlehome);
-app.get("/profile", handleprofile);
+const handleHome = (req, res) => res.send("Welcome WeTube Home!");
+
+const handleProfile = (req, res) => res.send("You're on my profile now.");
+
+const betweenHome = (req, res, next) => {
+    console.log("Between");
+    next();
+}
+
+app.get("/", handleHome);
+
+app.use(betweenHome);
+
+app.get("/profile", handleProfile);
+
+app.listen(PORT, handleListening);
