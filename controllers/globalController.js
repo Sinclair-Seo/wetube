@@ -1,5 +1,5 @@
-export const contHome = (req, res) => res.send('Home');
-export const contJoin = (req, res) => res.send('Join');
-export const contLogin = (req, res) => res.send('Login');
-export const contLogout = (req, res) => res.send('Logout');
-export const contSearch = (req, res) => res.send('Search');
+export const contHome = (req, res) => res.render("home");
+export const contJoin = (req, res) => res.render("join");
+export const contLogin = (req, res) => res.render("login");
+export const contLogout = (req, res) => res.render("logout");
+export const contSearch = (req, res) => res.render("search");
