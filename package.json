@@ -19,6 +19,7 @@
     "start": "nodemon --exec babel-node init.js --delay 2"
   },
   "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.11.2",
     "nodemon": "^1.19.2"
   }
 }
