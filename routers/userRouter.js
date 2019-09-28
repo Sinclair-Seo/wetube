@@ -4,9 +4,8 @@ import { contUsers, contUserDetail, contEditProfile, contChangePassword } from "
 
 const userRouter = express.Router();
 
-userRouter.get(routes.users, contUsers);
-userRouter.get(routes.userDetail, contUserDetail);
 userRouter.get(routes.editProfile, contEditProfile);
 userRouter.get(routes.changePassword, contChangePassword);
+userRouter.get(routes.userDetail, contUserDetail);
 
 export default userRouter;
