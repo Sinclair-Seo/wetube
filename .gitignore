@@ -87,3 +87,6 @@ typings/
 
 # DynamoDB Local files
 .dynamodb/
+
+# Custermized configuration by WeTube
+uploads
