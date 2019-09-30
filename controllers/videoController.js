@@ -3,9 +3,10 @@ import routes from "../routes";
 import Video from "../models/Video";
 import Comment from "../models/Comment";
 
+// Home Page
 export const home = async(req, res) => {
     try{
-        const videos = await Video.find({});
+        const videos = await Video.find({}).sort({_id: -1});
         res.render("home", { pageTitle: "Home", videos });
     } catch(error) {
         console.log(error);
@@ -13,6 +14,8 @@ export const home = async(req, res) => {
     }
     
 };
+
+// Search Page
 export const search = (req, res) => {
     //console.log(req.query);
     const {
