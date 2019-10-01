@@ -12,6 +12,14 @@ const config = {
   module: {
     rules: [
       {
+        test: /\.(js)$/,
+        use: [
+          {
+            loader: "babel-loader"
+          }
+        ]
+      },
+      {
         test: /\.(scss)$/,
         use: ExtractCSS.extract([
           {
@@ -20,7 +28,7 @@ const config = {
           {
             loader: "postcss-loader",
             options: {
-              plugin() {
+              plugins() {
                 return [autoprefixer({ browers: "cover 99.5%" })];
               }
             }
